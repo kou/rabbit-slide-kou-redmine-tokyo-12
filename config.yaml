@@ -1,0 +1,27 @@
+---
+id: redmine-tokyo-12
+base_name: fast-redmine-full-text-search-by-groonga
+tags:
+- rabbit
+- groonga
+- mroonga
+- pgroonga
+- redmine
+- full-text-search
+presentation_date: 2017-05-13
+version: 2017.5.13.0
+licenses:
+- CC BY-SA 4.0
+- CC BY 3.0
+slideshare_id: 
+speaker_deck_id: 
+ustream_id: 
+vimeo_id: 
+youtube_id: 
+author:
+  markup_language: :rd
+  name: Kouhei Sutou
+  email: kou@clear-code.com
+  rubygems_user: kou
+  slideshare_user: kou
+  speaker_deck_user: 
