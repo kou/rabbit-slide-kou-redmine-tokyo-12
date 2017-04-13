@@ -28,11 +28,12 @@
   * 必要な情報に
   * 素早くアクセスしたい！
 
-= 活用方法
+= 活用方法：検索！
 
-  * 検索！
-
-# スクリーンショットとか
+  # image
+  # src = images/redmine-search.png
+  # relative_width = 90
+  # reflect_ratio = 0.1
 
 = 活用の壁
 
@@ -42,7 +43,25 @@
     * 大量→必要な情報を見つけにくい
     * 大量→探す時間が増える
 
-= 課題例
+= 課題例1：検索ノイズが多い
 
-  * 検索ノイズが多い例
-  * 検索が遅い例
+  # image
+  # src = images/redmine-search-noise.svg
+  # relative_height = 100
+  # reflect_ratio = 0.1
+
+= 課題例2：検索が遅い
+
+  * (('wait'))本当に大量だとね！
+  * (('wait'))↓これくらいだと遅くない
+    * チケット数：3629
+    * コメント数：35721
+    * Wikiページ数：1016
+    * 1秒以内に返ってくる
+
+= 解決策
+
+Groongaで\n
+Redmineを\n
+高速全文検索
+
