@@ -109,4 +109,133 @@ Redmineを\n
 
 = ここからの話
 
-お宝情報を紹介
+導入したくなる情報を紹介
+
+= インストール：RDBMS
+
+  * 対応RDBMS
+    * MySQLもPostgreSQLも！
+  * RDBMSにGroonga対応\n
+    プラグインをインストール\n
+    (('note:プラグイン：別途サービス管理不要→運用コスト増加なし'))
+    * MySQL：Mroonga
+    * PostgreSQL：PGroonga
+
+= インストール：Mroonga
+
+(('tag:center'))
+(('note:http://mroonga.org/ja/docs/install.html'))
+
+  * パッケージで簡単インストール
+  * 対応プラットフォーム
+    * Debian GNU/Linux, Ubuntu
+    * CentOS Fedora
+    * macOS
+    * Windows
+
+= インストール：PGroonga
+
+(('tag:center'))
+(('note:https://pgroonga.github.io/ja/install/'))
+
+  * パッケージで簡単インストール
+  * 対応プラットフォーム
+    * Debian GNU/Linux, Ubuntu
+    * CentOS Fedora
+    * macOS
+    * Windows
+
+= 設定：PGroonga
+
+(('tag:center'))
+Redmine用のユーザーに\n
+PGroongaを使う権限を付与
+
+  # coderay sql
+  CREATE EXTENSION pgroonga;
+  GRANT USAGE ON pgroonga TO ユーザー名;
+
+= インストール：プラグイン
+
+  % cd redmine
+  % git clone \
+      https://github.com/okkez/redmine_full_text_search.git \
+      plugins/full_text_search
+  % bin/rake redmine:plugins:migrate RAILS_ENV=production
+
+(('tag:center'))
+再起動で完了！
+
+= 高度な検索1：AND/OR/NOT
+
+  * キーワード単位でのAND/OR/NOT
+    * 従来：AND/ORのみ
+    * 従来：キーワード全体で切り替え
+  * 例：
+    * (Groonga OR Mroonga) -PostgreSQL
+    * GroongaまたはMroongaを含むが\n
+      PostgreSQLは含まない
+
+= 高度な検索2：並び順の変更
+
+  * ソート対象：スコア・更新時刻
+    * 従来：更新時刻のみ
+  * ソート順：昇順・降順
+    * 従来：降順のみ
+
+= 並び順の変更UI
+
+  # image
+  # src = images/redmine-search-sort-options.png
+  # relative_height = 100
+  # reflect_ratio = 0.1
+
+= ここまでのまとめ
+
+  * 簡単にインストールできる
+    * 運用も楽
+  * AND/OR/NOTを使える
+    * 絞り込みに便利
+  * 並び順をカスタマイズできる
+    * スコアと更新時刻で十分
+
+= ここからの話
+
+Redmineの開発に\n
+参加しよう！
+
+= 開発に参加？
+
+  * Redmine本体のコードを書く\n
+    ((*だけじゃない*))
+    * バグレポート・テスト・issue対応
+    * ドキュメント作成・宣伝
+  * プラグインを作る\n
+    ((*だけじゃない*))
+    * 本体と同様↑のことも大事な開発
+
+= 開発の参加例
+
+  * Groongaプラグイン開発時の\n
+    知見をフィードバック
+    * Defect #21993: サイズ上限が小
+    * Patch #23153: フックを追加
+    * Feature #25198: スコアを表示
+
+= 敷居が高そう？
+
+  * OSS Gateワークショップへ\n
+    参加してみよう
+    * 「OSS開発に参加」を経験できる\n
+      (('note:（Redmineもプラグインの多くもOSS！）'))\n
+      (('note:（もちろんこのプラグインもGroongaもOSS！）'))
+    * https://oss-gate.doorkeeper.jp/
+
+= まとめ
+
+  * Redmineをさらに活用するなら\n
+    Groongaプラグインを使おう！
+  * Redmineの開発に参加しよう！
+    * OSS Gateワークショップが役立つ
+  * 宣伝：全文検索のことは\n
+    クリアコードに相談しよう！
