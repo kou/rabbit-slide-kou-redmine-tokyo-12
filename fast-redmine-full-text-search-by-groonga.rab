@@ -161,7 +161,7 @@ PGroongaを使う権限を付与
   % git clone \
       https://github.com/okkez/redmine_full_text_search.git \
       plugins/full_text_search
-  % bin/rake redmine:plugins:migrate RAILS_ENV=production
+  % bin/rake redmine:plugins RAILS_ENV=production
 
 (('tag:center'))
 再起動で完了！
